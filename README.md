@@ -6,7 +6,7 @@
 
 ### 支持
 <br>[appium](http://blog.csdn.net/galen2016/article/details/52633775 "悬停显示")  <br>
-
+<br>[Python2.7](http://blog.csdn.net/whhit111/article/details/51606773 "悬停显示")  <br>
 
 
    
