@@ -7,7 +7,7 @@ from selenium import webdriver
 from appium import webdriver
 import time
 
-from Android_233.Scrpit.Operate import swipLeft, swipeDown
+from Android_233.Scrpit.Operate import swipLeft, swipeDown, swipeup
 
 
 class answer():
@@ -19,22 +19,27 @@ class answer():
             pass
     def jd_answer(self,driver):  #简答页面处理
         try:
-            swipeDown(driver=driver, t=1500)
+            swipeup(driver, t=800)
         except:
             pass
         self.messagWrong_answer(driver)
-        text = u"111"
+        text = 111
 #       driver.find_element_by_id('com.example.examda:id/onlydo_ckb').click()
         driver.find_element_by_id('com.example.examda:id/nq03_fillblank_tv').click()
         time.sleep(1)
         driver.find_element_by_class_name('android.widget.EditText').send_keys(text)
-        driver.find_element_by_id('com.example.examda:id/savedialog').click()
+        driver.hide_keyboard()
+        try:
+            driver.find_element_by_id('com.example.examda:id/savedialog').click()
+        except:
+            driver.find_element_by_name(u'保存').click()
+        time.sleep(1)
         swipLeft(driver=driver, t=800)
         return driver
 
     def danx_answer(self,driver): #单选题页面处理
         try:
-            swipeDown(driver=driver, t=1500)
+            swipeup(driver=driver, t=800)
         except:
             pass
         self.messagWrong_answer(driver)
@@ -47,7 +52,7 @@ class answer():
 
     def danx2_answer(self,driver): #单选题页面处理
         try:
-            swipeDown(driver=driver, t=1500)
+            swipeup(driver=driver, t=1500)
         except:
             pass
         self.messagWrong_answer(driver)
@@ -62,7 +67,7 @@ class answer():
 
     def duox1_answer(self,driver): #多选题页面处理
         try:
-            swipeDown(driver=driver, t=1500)
+            swipeup(driver=driver, t=1500)
         except:
             pass
         self.messagWrong_answer(driver)
@@ -75,7 +80,7 @@ class answer():
 
     def duox2_answer(self,driver): #多选题页面处理2
         try:
-            swipeDown(driver=driver, t=1500)
+            swipeup(driver=driver, t=1500)
         except:
             pass
         self.messagWrong_answer(driver)
@@ -88,20 +93,26 @@ class answer():
 
     def tk_answer(self,driver): #填空题页面处理
         try:
-            swipeDown(driver=driver, t=1500)
+            swipeup(driver=driver, t=1500)
         except:
             pass
         self.messagWrong_answer(driver)
-        text = u"111"
+        text = 111
         driver.find_element_by_id('com.example.examda:id/onlydo_ckb').click()
         driver.find_element_by_id('com.example.examda:id/nq03_fillblank_tv').click()
         driver.find_element_by_class_name('android.widget.EditText').send_keys(text)
+        try:
+            driver.find_element_by_id('com.example.examda:id/savedialog').click()
+        except:
+            driver.find_element_by_name(u'保存').click()
+        time.sleep(1)
+        driver.hide_keyboard()#隐藏键盘
         swipLeft(driver=driver, t=800)
         return driver
 
     def tl_answer(self,driver): #听力题页面处理
         try:
-            swipeDown(driver=driver, t=1500)
+            swipeup(driver=driver, t=1500)
         except:
             pass
         self.messagWrong_answer(driver)
@@ -114,7 +125,7 @@ class answer():
 
     def pd_answer(self,driver): #判断题页面处理
         try:
-            swipeDown(driver=driver, t=1500)
+            swipeup(driver=driver, t=1500)
         except:
             pass
         self.messagWrong_answer(driver)
@@ -160,6 +171,12 @@ class answer():
                 self.duox2_answer(driver=driver)
         elif titletxt ==u"填空题":
             self.jd_answer(driver=driver)  # 填空题
+
+        try:
+            driver.find_element_by_id('com.example.examda:id/dialog_but_r').click()
+            print '提交试卷'
+        except:
+            pass
 
     def amount(self,driver):
         amount = driver.find_element_by_id('com.example.examda:id/nq03_choice_ques_total').text
