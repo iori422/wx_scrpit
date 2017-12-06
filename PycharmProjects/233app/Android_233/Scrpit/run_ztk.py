@@ -14,25 +14,27 @@ from Android_233.Scrpit.Boot_page import sett_1, permission, Boot_1, Boot_2, Boo
 from Android_233.Scrpit.Masked_page import masked
 
 driver = sett_1()
-app_servers(driver=driver, select=2)  # 选择api环境 1=183 2=t 3=正式
 time.sleep(3)
+try:
+        app_servers(driver=driver, select=2)  # 选择api环境 1=183 2=t 3=正式
+except:
+        pass
+time.sleep(2)
 home_page().home_login(driver)# 登录页面
 time.sleep(3)
 question = menu().questions(driver)
 question_zj = questionner().free_qustion6(driver)
 lnzt_class().zt_list(driver)# 点击选择试卷做题页面
 paper().paper_click(driver)
-time.sleep(3)
+time.sleep(2)
 amount = answer().amount(driver)
 amount = int(amount)
 for amount in range(amount):
         answer().answer_type(driver)#答题提交问卷
-
 try:
         driver.find_element_by_id('com.example.examda:id/right_ques_btn').click()
 except:
         driver.find_element_by_id('com.example.examda:id/nq03_answerll_answertv').click()
-
 paper().paper_wdgf(driver)
 print  "over"
 
