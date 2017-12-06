@@ -1,4 +1,4 @@
-# app_233
+# App_233（Android）
 
 #### 项目地址
 <br>http://www.233.com/shouji233/
