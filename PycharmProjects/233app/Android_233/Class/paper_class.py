@@ -31,12 +31,11 @@ class paper():
         amount = int(amount)
         try:
             for i in range(amount):
-                driver.find_element_by_id('com.example.examda:id/nq04_usergradeselfet').send_keys('6')
+                driver.find_element_by_id('com.example.examda:id/nq04_usergradeselfet').send_keys('1')
                 driver.find_element_by_id('com.example.examda:id/nq04_savegradebtn').click()
                 swipLeft(driver=driver, t=800)
         except:
             pass
-
         #driver.find_element_by_id('com.example.examda:id/nq03_answerll_answertv').click()
 
 
