@@ -1,12 +1,8 @@
-# coding:utf-8
-import os
-import re
-
-import tmp as tmp
-from selenium import webdriver
-from appium import webdriver
-import time
-
+# -*- coding: utf-8 -*-
+# @File  : run_mnst.py
+# @Author: tutubuhaoci
+# @Date  : 2017/12/15
+# @Desc  : 
 def screshot(driver):
     try:
         driver.find_element_by_id("kwsss").send_keys("selenium")

@@ -43,6 +43,6 @@ def swipRight(driver,t):
     print x2
     driver.swipe(x1,y1,x2,y1,t)
 
-def swip_downformadb():
+def swip_downformadb(): #调取adb命令滑动屏幕操作
     swipd=os.system('adb shell input swipe 0 1600 300 300')
     return swipd

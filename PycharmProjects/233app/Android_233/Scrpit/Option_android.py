@@ -1,7 +1,10 @@
-#coding:utf-8
+# -*- coding: utf-8 -*-
+# @File  : run_mnst.py
+# @Author: tutubuhaoci
+# @Date  : 2017/12/15
+# @Desc  :
 import os
 import time
-
 from selenium import webdriver
 
 

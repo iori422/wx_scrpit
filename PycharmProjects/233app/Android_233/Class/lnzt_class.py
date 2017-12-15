@@ -1,4 +1,8 @@
-# coding:utf-8
+# -*- coding: utf-8 -*-
+# @File  : run_mnst.py
+# @Author: tutubuhaoci
+# @Date  : 2017/12/15
+# @Desc  :
 import random
 class lnzt_class():
     def kemu1_catalog(self,driver):

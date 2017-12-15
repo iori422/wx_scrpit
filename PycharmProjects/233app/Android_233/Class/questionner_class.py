@@ -1,9 +1,8 @@
-# coding:utf-8
-import os
-import re
-from selenium import webdriver
-from appium import webdriver
-import time
+# -*- coding: utf-8 -*-
+# @File  : run_mnst.py
+# @Author: tutubuhaoci
+# @Date  : 2017/12/15
+# @Desc  :
 
 class questionner: #主菜单题库页面
     def remind_qustion(self,driver):

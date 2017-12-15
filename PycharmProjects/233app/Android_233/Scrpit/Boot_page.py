@@ -1,11 +1,15 @@
 # coding:utf-8
+# -*- coding: utf-8 -*-
+# @File  : run_mnst.py
+# @Author: tutubuhaoci
+# @Date  : 2017/12/15
+# @Desc  :
 import re
 from selenium import webdriver
 from appium import webdriver
 import time
 import os
-from Android_233.Scrpit.Masked_page import masked
-from Operate import swipRight, swipLeft
+from Operate import swipLeft
 
 
 def sett_1(): #获取手机相关信息 并配置appium

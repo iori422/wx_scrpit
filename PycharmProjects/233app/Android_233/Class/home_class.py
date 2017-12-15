@@ -1,4 +1,8 @@
-# coding:utf-8
+# -*- coding: utf-8 -*-
+# @File  : run_mnst.py
+# @Author: tutubuhaoci
+# @Date  : 2017/12/15
+# @Desc  :
 from _pytest import unittest
 from Android_233.Class.login_class import login_pag
 class home_page:  #主菜单个人信息页面

@@ -1,4 +1,9 @@
 # coding:utf-8
+# -*- coding: utf-8 -*-
+# @File  : run_mnst.py
+# @Author: tutubuhaoci
+# @Date  : 2017/12/15
+# @Desc  :
 import random
 import time
 from Android_233.Scrpit.Operate import swipLeft, swipeDown, swipeup, swip_downformadb

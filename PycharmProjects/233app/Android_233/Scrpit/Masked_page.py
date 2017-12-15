@@ -1,8 +1,8 @@
-# coding:utf-8
-import os
-import re
-from selenium import webdriver
-from appium import webdriver
+# -*- coding: utf-8 -*-
+# @File  : run_mnst.py
+# @Author: tutubuhaoci
+# @Date  : 2017/12/15
+# @Desc  :
 import time
 def masked(driver):
     try:

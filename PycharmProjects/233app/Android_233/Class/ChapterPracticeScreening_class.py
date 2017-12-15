@@ -1,4 +1,8 @@
-# coding:utf-8
+# -*- coding: utf-8 -*-
+# @File  : run_mnst.py
+# @Author: tutubuhaoci
+# @Date  : 2017/12/15
+# @Desc  :
 class module_exam:#章节练习页面
     def all_type(self,driver):  #选择题型
         driver.find_element_by_name('全部').click()
