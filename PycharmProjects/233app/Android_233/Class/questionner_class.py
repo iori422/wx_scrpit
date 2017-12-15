@@ -5,7 +5,7 @@ from selenium import webdriver
 from appium import webdriver
 import time
 
-class questionner:
+class questionner: #主菜单题库页面
     def remind_qustion(self,driver):
         driver.find_element_by_name('提醒做题').click()
 

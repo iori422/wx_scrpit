@@ -1,11 +1,7 @@
 # coding:utf-8
-import os
-import re
-from selenium import webdriver
-from appium import webdriver
 import time
 
-class menu:
+class menu: # 主菜单选项
     def home(self,driver):
         driver.find_element_by_name('首页').click()
 

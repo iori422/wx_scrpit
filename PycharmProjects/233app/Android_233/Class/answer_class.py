@@ -4,7 +4,7 @@ import time
 from Android_233.Scrpit.Operate import swipLeft, swipeDown, swipeup, swip_downformadb
 
 
-class answer():
+class answer():  #问题操作类
     def messagWrong_answer(self,driver):
         try:
             driver.find_element_by_id('com.example.examda:id/charmsg_tv')
@@ -16,7 +16,6 @@ class answer():
             swip_downformadb()
         self.messagWrong_answer(driver)
         text = 111
-#       driver.find_element_by_id('com.example.examda:id/onlydo_ckb').click()
         driver.find_element_by_id('com.example.examda:id/nq03_fillblank_tv').click()
         time.sleep(1)
         driver.find_element_by_class_name('android.widget.EditText').send_keys(text)
@@ -36,7 +35,6 @@ class answer():
         option = driver.find_elements_by_id('com.example.examda:id/nq03_noritem_uppercase')
         random.choice(option).click()
         time.sleep(1)
-        #driver.find_element_by_id('com.example.examda:id/right_ques_iv').click()
         swipLeft(driver=driver, t=300)
         return driver
 
@@ -47,7 +45,6 @@ class answer():
         option = driver.find_elements_by_id('com.example.examda:id/nq03_button_option')
         random.choice(option).click()
         time.sleep(1)
-        #driver.find_element_by_id('com.example.examda:id/right_ques_iv').click()
         swipLeft(driver=driver, t=300)
         return driver
 
@@ -125,11 +122,10 @@ class answer():
         driver.find_element_by_name('收藏').click()
         return driver
 
-    def answer_type(self,driver):
+    def answer_type(self,driver):#判断页面题型
         time.sleep(1)
         titletxt= driver.find_element_by_id('com.example.examda:id/nq03_choice_questype_tv').text
         print titletxt
-        #titletxt=str(titletxt)
         time.sleep(2)
         if titletxt ==u'简答题':
             swip_downformadb()
@@ -152,7 +148,7 @@ class answer():
             except:
                 self.duox2_answer(driver=driver)
         elif titletxt ==u"填空题":
-            self.jd_answer(driver=driver)  # 填空题
+            self.jd_answer(driver=driver)
 
         try:
             driver.find_element_by_id('com.example.examda:id/dialog_but_r').click()
@@ -160,7 +156,7 @@ class answer():
         except:
             pass
 
-    def amount(self,driver):
+    def amount(self,driver):#试卷内题号判断
         amount = driver.find_element_by_id('com.example.examda:id/nq03_choice_ques_total').text
         amount =str(amount)
         amount =str(amount[1:])

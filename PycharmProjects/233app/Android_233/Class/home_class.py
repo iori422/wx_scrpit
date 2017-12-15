@@ -1,7 +1,7 @@
 # coding:utf-8
 from _pytest import unittest
 from Android_233.Class.login_class import login_pag
-class home_page:
+class home_page:  #主菜单个人信息页面
     def message(self,driver):
         driver.find_element_by_accessibility_id('消息中心').click()
 
@@ -59,7 +59,7 @@ class home_page:
     def home_questionnaire(self,driver):
         driver.find_element_by_name('进入我的题库').click()
 
-    def home_login(self,driver):
+    def home_login(self,driver): #登录操作
         try:
             driver.find_element_by_id("com.example.examda:id/tvMy").click()
             driver.find_element_by_id('com.example.examda:id/no09_user_jifen_ll')#已登录

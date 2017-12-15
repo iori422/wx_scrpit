@@ -1,11 +1,6 @@
 # coding:utf-8
-import os
-import re
-from selenium import webdriver
-from appium import webdriver
-import time
-class module_exam:
-    def all_type(self,driver):
+class module_exam:#章节练习页面
+    def all_type(self,driver):  #选择题型
         driver.find_element_by_name('全部').click()
 
     def dx_type(self,driver):
@@ -23,7 +18,7 @@ class module_exam:
     def jd_type(self,driver):
         driver.find_element_by_name('简答题').click()
 
-    def amount5(self,driver):
+    def amount5(self,driver):# 选择题目数量
         driver.find_element_by_name('5').click()
 
     def amount10(self,driver):
@@ -44,5 +39,5 @@ class module_exam:
     def amount35(self,driver):
         driver.find_element_by_name('35').click()
 
-    def start_exam(self,driver):
+    def start_exam(self,driver): #开始做题
         driver.find_element_by_id('com.example.examda:id/nq02_startdo_btn').click()
