@@ -1,15 +1,9 @@
 # coding:utf-8
-import os
 import random
-import re
-from selenium import webdriver
-from appium import webdriver
+from _pytest import unittest
 import time
-
 from Android_233.Class.answer_class import answer
 from Android_233.Scrpit.Operate import swipLeft
-
-
 class paper():
     def paper_practice(self,driver):
         driver.find_element_by_id('com.example.examda:id/nq08_exercisemode_btn').click()
@@ -26,20 +20,58 @@ class paper():
         return driver
 
     def paper_wdgf(self,driver):
-        driver.find_element_by_id('com.example.examda:id/question_pop_submit_btn').click()
-        amount = answer().amount(driver)
-        amount = int(amount)
         try:
-            for i in range(amount):
-                driver.find_element_by_id('com.example.examda:id/nq04_usergradeselfet').send_keys('1')
-                driver.find_element_by_id('com.example.examda:id/nq04_savegradebtn').click()
-                swipLeft(driver=driver, t=800)
+            driver.find_element_by_id('com.example.examda:id/question_pop_submit_btn').click()
+            amount = answer().amount(driver)
+            amount = int(amount)
+            print "问答评估分sssssssssssssss s%"+str(amount)
+            for amount in range(amount+1):
+                try:
+                    time.sleep(2)
+                    driver.find_element_by_id('com.example.examda:id/nq04_usergradeselfet').send_keys('1')
+                    driver.find_element_by_id('com.example.examda:id/nq04_savegradebtn').click()
+                    time.sleep(2)
+                    swipLeft(driver=driver,t=300)
+                except:
+                    pass
+            driver.find_element_by_id('com.example.examda:id/nq03_choice_answerll').click()#提交试卷
         except:
-            pass
-        #driver.find_element_by_id('com.example.examda:id/nq03_answerll_answertv').click()
+            print "没有找到元素"
+        time.sleep(2)
+        self.check_answer(driver) #
 
+        if __name__ == '__main__':
+            unittest.main()
 
+    def check_answer(self,driver): #查看答案解析
 
+        elem = driver.find_element_by_id('com.example.examda:id/nq06_seeanalyze_btn')
+        for i in range(3):
+            try:
+                time.sleep(1)
+                elem.click()
+            except:
+                pass
+
+    def retest_answer(self,driver): #重新测试
+
+        elem =driver.find_element_by_id('com.example.examda:id/nq06_retest_btn')
+        for i in range(3):
+            try:
+                time.sleep(1)
+                elem.click()
+            except:
+                pass
+
+    def assess_answer(self,driver): #评价试卷
+
+        elem =driver.find_element_by_name(u'评价试卷')
+        for i in range(3):
+            try:
+                time.sleep(1)
+                elem.click()
+            except:
+                pass
 
 
 

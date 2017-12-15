@@ -1,13 +1,6 @@
 # coding:utf-8
-import os
-import re
-from selenium import webdriver
-from appium import webdriver
-import time
-
+from _pytest import unittest
 from Android_233.Class.login_class import login_pag
-
-
 class home_page:
     def message(self,driver):
         driver.find_element_by_accessibility_id('消息中心').click()
@@ -79,6 +72,9 @@ class home_page:
             t.login(driver=driver)
             driver.find_element_by_id('com.example.examda:id/no01_loginbut').click()
             print '未登录'
+
+        if __name__ == '__main__':
+            unittest.main()
 
 
 
