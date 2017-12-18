@@ -4,7 +4,6 @@
 # @Date  : 2017/12/15
 # @Desc  :
 import time
-
 from Android_233.Class.answer_class import answer
 from Android_233.Class.home_class import home_page
 from Android_233.Class.lnzt_class import lnzt_class
@@ -21,13 +20,13 @@ try:
 except:
         pass
 time.sleep(2)
-home_page().home_login(driver)# 登录页面
+home_page().home_login(driver)
 time.sleep(3)
 question = menu().questions(driver)
 time.sleep(1)
 question_zj = questionner().free_qustion6(driver)
 time.sleep(1)
-lnzt_class().zt_list(driver)# 点击选择试卷做题页面
+lnzt_class().zt_list(driver)
 time.sleep(5)
 paper().paper_click(driver)
 time.sleep(1)
@@ -35,7 +34,7 @@ amount = answer().amount(driver)
 time.sleep(1)
 amount = int(amount)
 for amount in range(amount):
-        answer().answer_type(driver)#答题提交问卷
+        answer().answer_type(driver)
 try:
         driver.find_element_by_id('com.example.examda:id/right_ques_btn').click()
 except:
