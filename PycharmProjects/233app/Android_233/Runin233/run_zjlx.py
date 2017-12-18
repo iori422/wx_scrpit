@@ -9,7 +9,7 @@ from Android_233.Class.answer_class import answer
 from Android_233.Class.home_class import home_page
 from Android_233.Class.menu_class import menu, directorytow
 from Android_233.Class.questionner_class import questionner
-from Android_233.Scrpit.Boot_page import sett_1, permission, Boot_1, Boot_2, Boot_gps, app_hanginfo, app_servers
+from Android_233.Scrpit.Boot_page import sett_1, permission, Boot_1, Boot_2, Boot_gps,app_servers
 from Android_233.Scrpit.Masked_page import masked
 driver = sett_1()
 app_servers(driver=driver, select=2)  # 选择api环境 1=183 2=t 3=正式
