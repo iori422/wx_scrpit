@@ -15,7 +15,7 @@ class menu: # 主菜单选项
     def course(self,driver):
         driver.find_element_by_name('课程').click()
 
-    def questions(self,driver):
+    def questions(self,driver):#题库
         driver.find_element_by_id('com.example.examda:id/tvQuestion').click()
 
     def mymsg(self,driver):
