@@ -27,3 +27,4 @@ class directorytow:
         click_drt = driver.find_elements_by_id('com.example.examda:id/nq02_lvitem_btn')
         click_drt[1].click()
 
+

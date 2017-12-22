@@ -16,8 +16,14 @@ class paper():
         driver.find_element_by_id('com.example.examda:id/nq08_exammode_btn').click()
 
     def paper_click(self,driver):
-        t1 =driver.find_element_by_id('com.example.examda:id/nq08_exercisemode_btn')
-        t2 =driver.find_element_by_id('com.example.examda:id/nq08_exammode_btn')
+        try:
+            t1 =driver.find_element_by_id('com.example.examda:id/nq08_exercisemode_btn')
+        except:
+            t1 =driver.find_element_by_id('com.example.examda:id/vip_lxms')
+        try:
+            t2 =driver.find_element_by_id('com.example.examda:id/nq08_exammode_btn')
+        except:
+            t2 =driver.find_element_by_id('com.example.examda:id/vip_ksms')
         slc=[t1,t2]
         random.choice(slc).click()
         print u'选择模式'
@@ -48,14 +54,14 @@ class paper():
             unittest.main()
 
     def check_answer(self,driver): #查看答案解析
-
-        elem = driver.find_element_by_id('com.example.examda:id/nq06_seeanalyze_btn')
-        for i in range(3):
-            try:
-                time.sleep(1)
-                elem.click()
-            except:
-                pass
+        try:
+            elem = driver.find_element_by_id('com.example.examda:id/nq06_seeanalyze_btn')
+            time.sleep(1)
+            elem.click()
+        except:
+            elem2 = driver.find_element_by_id('com.example.examda:id/seeanalyze_tv')
+            time.sleep(1)
+            elem2.click()
 
     def retest_answer(self,driver): #重新测试
 
